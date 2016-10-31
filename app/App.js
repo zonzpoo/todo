@@ -8,10 +8,13 @@ import List from './component/List';
 import Footer from './component/Footer';
 import * as Actions from './actions';
 
-@connect(state => ({todoApp: state.todoApp}),
+@connect(
+    state => ({todoApp: state.todoApp}),
     {
-        add: Actions.add, done: Actions.done,
-        reopen: Actions.reopen, filter: Actions.filter,
+        add: Actions.add,
+        done: Actions.done,
+        reopen: Actions.reopen,
+        filter: Actions.filter,
         list: Actions.list
     })
 export default class App extends React.Component {
