@@ -22,11 +22,9 @@ export default class App extends React.Component {
         this.props.dispatch(Actions.reopen(id));
     }
 
-
     handleChangeFilter(filter) {
         this.props.dispatch(Actions.filter(filter));
     }
-
 
     render() {
         let todos = this.props.todoApp.todos;
