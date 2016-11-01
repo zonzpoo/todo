@@ -6,7 +6,7 @@ from tornado.web import Application, RequestHandler
 from tornado.options import define
 
 define('port', default=8000, type=int, help='server port')
-define('bind', default='0.0.0.0', type=str, help='server bind')
+define('bind', default='0.0.0.0', type=str, help='server listen address')
 
 
 def make_app(router, **settings):
