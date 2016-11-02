@@ -1,10 +1,10 @@
 import React from 'react';
 import autoBind from 'react-autobind';
 
-export default class ListItem extends React.Component {
+class ListItem extends React.Component {
     constructor(props) {
         super(props);
-        autoBind(this, handleChange);
+        this.handleChange = this.handleChange.bind(this);
     }
 
     handleChange(e) {
@@ -33,17 +33,18 @@ export default class ListItem extends React.Component {
 }
 
 
-export default class List extends React.Comonent {
+export default class List extends React.Component {
     constructor(props) {
         super(props);
     }
 
-
     render() {
         return (
-            this.props.todos.map(todo => (
-                <ListItem key={todo.id} todo={todo} onComplete={this.props.onComplete}
-                          onReopen={this.props.onReopen}></ListItem>))
+            <div>{
+                this.props.todos
+                    .map(todo => (<ListItem key={todo.id} todo={todo} onComplete={this.props.onComplete}
+                                            onReopen={this.props.onReopen}/>))}
+            </div>
         )
     }
 }

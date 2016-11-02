@@ -1,5 +1,4 @@
 import React from 'react';
-import autoBind from 'react-autobind';
 
 
 export default class Footer extends React.Component {

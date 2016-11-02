@@ -1,13 +1,20 @@
 import React from 'react';
 import * as Actions from './actions';
 import autoBind from 'react-autobind';
-import {connect} from 'react-redux'
+import {connect} from 'react-redux';
+import NewTodo from './component/NewTodo';
+import List from './component/List';
+import Footer from './component/Footer';
 
 @connect(state => ({todoApp: state.todoApp}))
 export default class App extends React.Component {
     constructor(props) {
         super(props);
-        autoBind(this, handleCreate, handleComplete, handleReopen, handleChangeFilter);
+        // autoBind(this, handleCreate, handleComplete, handleReopen, handleChangeFilter);
+        this.handleCreate = this.handleCreate.bind(this);
+        this.handleComplete = this.handleComplete.bind(this);
+        this.handleReopen = this.handleReopen.bind(this);
+        this.handleChangeFilter = this.handleChangeFilter.bind(this);
     };
 
     handleCreate(value) {

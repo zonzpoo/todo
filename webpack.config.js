@@ -9,7 +9,7 @@ module.exports = {
         'react-hot-loader/patch',
         'webpack-dev-server/client?http://127.0.0.1:3000',
         'webpack/hot/dev-server',
-        './appname/index'
+        './app/index'
     ],
     output: {
         path: path.join(__dirname, 'dist'),

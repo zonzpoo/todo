@@ -7,8 +7,7 @@ export default class NewTodo extends React.Component {
         this.state = {
             value: ''
         };
-        autoBind(this, handleCreate);
-
+        this.handleCreate = this.handleCreate.bind(this);
     }
 
     handleCreate() {
