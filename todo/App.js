@@ -6,7 +6,14 @@ import NewTodo from './component/NewTodo';
 import List from './component/List';
 import Footer from './component/Footer';
 
-@connect(state => ({todoApp: state.todoApp}))
+@connect(state => ({todoApp: state.todoApp}),
+    {
+        add: Actions.add,
+        done: Actions.done,
+        reopen: Actions.reopen,
+        filter: Actions.filter
+    }
+)
 export default class App extends React.Component {
     constructor(props) {
         super(props);
@@ -14,22 +21,22 @@ export default class App extends React.Component {
 
     @autobind
     handleCreate(value) {
-        this.props.dispatch(Actions.add(value));
+        this.props.add(value);
     }
 
     @autobind
     handleComplete(id) {
-        this.props.dispatch(Actions.done(id));
+        this.props.done(id);
     }
 
     @autobind
     handleReopen(id) {
-        this.props.dispatch(Actions.reopen(id));
+        this.props.reopen(id);
     }
 
     @autobind
     handleChangeFilter(filter) {
-        this.props.dispatch(Actions.filter(filter));
+        this.props.filter(filter);
     }
 
     render() {
@@ -48,5 +55,4 @@ export default class App extends React.Component {
             </div>
         )
     }
-
 }

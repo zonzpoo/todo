@@ -9,7 +9,7 @@ module.exports = {
         'react-hot-loader/patch',
         'webpack-dev-server/client?http://127.0.0.1:3000',
         'webpack/hot/dev-server',
-        './app/index'
+        './todo/index'
     ],
     output: {
         path: path.join(__dirname, 'dist'),
@@ -25,7 +25,7 @@ module.exports = {
                 test: /\.js$/,
                 loader: 'babel',
                 exclude: /node_modules/,
-                include: path.join(__dirname, 'app')
+                include: path.join(__dirname, 'todo')
             }
         ]
     }

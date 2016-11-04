@@ -33,7 +33,7 @@ if __name__ == '__main__':
     app = make_app(routes, debug=True)
     app.listen(options.port, address=options.bind)
     try:
-        # app.zk.start()
+        # todo.zk.start()
         IOLoop().current().start()
     except KeyboardInterrupt:
         IOLoop().current().stop()
